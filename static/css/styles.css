@@ -1,0 +1,23 @@
+.progress-bar-holder{
+  width: 1100px;
+  background-color: #e9ecef;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.progress-bar{
+  height: 30px;
+  color: #ffff;
+  font-weight: bold;
+  text-align: right;
+  background: #000000;
+  width: 0px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+
+progress-bar:hover{ background: #000000;}
+.progress-bar-holder:hover{background-color: #F8F9F9;}

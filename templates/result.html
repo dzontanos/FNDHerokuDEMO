@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+       crossorigin="anonymous">
+    </script>
+    <script src="{{ url_for('static', filename='js/myscript.js') }}"></script>
+	  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <title>Predict</title>
+</head>
+
+<style>
+  #brandname {
+    float: left;
+    margin-right: 10px;
+  }
+  h1 {
+    float: right;
+  }
+  .true-false-bar {
+    display: flex;
+    flex-direction: column;
+  }
+  .progress-bar-holder {
+    margin-bottom: 10px;
+  }
+  .progress-bar {
+    background: #AED6F1;
+  }
+  .article-text {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #000;
+  }
+  .button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #2C3E50;} 
+  body {
+    margin-right: 10px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    min-height: 50vh;
+  }
+</style>
+
+
+<body>
+  <div class="container">
+    <h3 class="mb-4"><b>Results of the Analysis</b></h3>
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <h5>Your Article:</h5>
+      </div>
+    </div>
+    
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <p><b style="color: black;">"{{mess}}"</b></p>
+      </div>
+    </div>
+    
+    <!-- progress 1 -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <h5 style="font-size:20px;">{{classes[0]}}</h5>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class='progress-bar-holder'>
+          <div style="background: #81ff53;" class='progress-bar'>
+            {{props[0]}}%
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- progress 2 -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <h5 style="font-size:20px;">{{classes[1]}}</h5>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class='progress-bar-holder'>
+          <div style="background: #f8a0a0;" class='progress-bar'>
+            {{props[1]}}%
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <a href="{{ url_for('home') }}"><button class="button button1">Back</button></a>
+    </div>
+  </div>
+</body>
