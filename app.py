@@ -32,4 +32,4 @@ def predict():
         return render_template('result.html', mess = input_message, classes = list(output_dict.keys()), props=props)
 
 if __name__ == '__main__':
-    app.run(port=5000,debug=True)
+    app.run(debug=True)
